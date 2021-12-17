@@ -1,0 +1,34 @@
+name: build
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: setup dotnet
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0.x'
+    - name: dotnet build
+      working-directory: src
+      run: |
+        dotnet restore
+        dotnet build -c Release --no-restore
+    - name: dotnet test
+      working-directory: src
+      run: |
+        dotnet test -c Release --no-restore --no-build \
+          /p:CollectCoverage=true \
+          /p:CoverletOutputFormat=opencover \
+          /p:CoverletOutput="../TestResult/" \
+          /p:MergeWith="../TestResults/coverage.opencover.xml"
+    - name: publish report to codecov.io
+      uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        file: src/TestResults/coverage.opencover.xml
+        flags: unittests
