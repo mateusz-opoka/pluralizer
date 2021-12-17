@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Pluralizer\Pluralizer.csproj" />
+    <ProjectReference Include="..\SimplePluralizer\SimplePluralizer.csproj" />
   </ItemGroup>
 
 </Project>

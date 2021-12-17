@@ -33,7 +33,7 @@ jobs:
         file: src/TestResults/coverage.opencover.xml
         flags: unittests
     - name: Generate NuGet package
-      working-directory: src/Pluralizer
+      working-directory: src/SimplePluralizer
       run: |
         dotnet pack --nologo --no-build -c Release -o out
         dotnet nuget push out/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_APIKEY }} --skip-duplicate

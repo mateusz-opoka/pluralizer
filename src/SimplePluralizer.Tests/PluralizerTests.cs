@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace Pluralizer.Tests
+namespace SimplePluralizer.Tests
 {
     [TestFixture]
     public class PluralizerTests

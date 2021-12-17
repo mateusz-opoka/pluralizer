@@ -1,4 +1,4 @@
-﻿namespace Pluralizer
+﻿namespace SimplePluralizer
 {
     public class Pluralizer
     {
