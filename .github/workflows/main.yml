@@ -24,9 +24,10 @@ jobs:
         dotnet test -c Release --no-restore --no-build \
           /p:CollectCoverage=true \
           /p:CoverletOutputFormat=opencover \
-          /p:CoverletOutput="../TestResult/" \
+          /p:CoverletOutput="../TestResults/" \
           /p:MergeWith="../TestResults/coverage.opencover.xml"
     - name: publish report to codecov.io
+      working-directory: src
       uses: codecov/codecov-action@v1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
