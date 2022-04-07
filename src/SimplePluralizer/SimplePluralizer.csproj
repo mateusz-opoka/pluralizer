@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>SimplePluralizer</PackageId>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
     <Description>
       The Pluralizer allows you to use a noun in the correct form depending on a numeric value.
     </Description>
