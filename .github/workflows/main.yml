@@ -8,9 +8,9 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: setup dotnet
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v3
       with:
         dotnet-version: '7.0.x'
     - name: dotnet build
@@ -27,10 +27,10 @@ jobs:
           /p:CoverletOutput="../TestResults/" \
           /p:MergeWith="../TestResults/coverage.opencover.xml"
     - name: publish report to codecov.io
-      uses: codecov/codecov-action@v1
+      uses: codecov/codecov-action@v3
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        file: src/TestResults/coverage.opencover.xml
+        files: src/TestResults/coverage.opencover.xml
         flags: unittests
     - name: Generate NuGet package
       working-directory: src/SimplePluralizer
