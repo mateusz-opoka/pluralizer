@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>SimplePluralizer</PackageId>
-    <Version>1.2.0</Version>
+    <Version>1.3.0</Version>
     <Description>
       The Pluralizer allows you to use a noun in the correct form depending on a numeric value.
     </Description>
